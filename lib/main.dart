@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:paniwala/providers/dropdown_providers.dart';
 import 'package:paniwala/utils/apptext.dart';
+import 'package:paniwala/utils/appthemes.dart';
+import 'package:provider/provider.dart';
 import './views/splashview.dart';
 
 void main() {
@@ -14,19 +17,21 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
   
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-       builder: (context, widget) {
-  
-        ScreenUtil.init(context,
-           designSize: const Size(360, 712) );
-        return widget!;
-      },
-      title: ApplicationText.applicationName,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return MultiProvider(
+      providers:[
+          ChangeNotifierProvider(create: (context) => DropDownProviders()),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+         builder: (context, widget) {
+          ScreenUtil.init(context,
+             designSize: const Size(360, 712) );
+          return widget!;
+        },
+        title: ApplicationText.applicationName,
+        theme: ApplicationTheme.lightThemeData,
+        home: const SplashView(),
       ),
-      home: const SplashView(),
     );
   }
 }
