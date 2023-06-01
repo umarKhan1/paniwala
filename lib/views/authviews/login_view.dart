@@ -5,6 +5,7 @@ import 'package:paniwala/appwidgets/appnavigation.dart';
 import 'package:paniwala/providers/dropdown_providers.dart';
 import 'package:paniwala/utils/appimagestext.dart';
 import 'package:paniwala/utils/paddingext.dart';
+import 'package:paniwala/views/authviews/forgotpassword.dart';
 import 'package:paniwala/views/authviews/signupview.dart';
 import 'package:provider/provider.dart';
 
@@ -90,13 +91,18 @@ class LoginView extends StatelessWidget {
                       ApplicationText.applicationLoginpasswordText, "", "",
                       isPass: true, textInputType: TextInputType.emailAddress),
                   20.ph,
-                  Align(
-                      alignment: Alignment.centerRight,
-                      child: Text(
-                        ApplicationText.applicationForgotPasswordText,
-                        style: TextStyle(
-                            fontSize: 13.sp, fontWeight: FontWeight.w800),
-                      )),
+                  InkWell(
+                    onTap: (){
+                      AppNavigation.navigateTo(context, const ForgotPasswordView());
+                    },
+                    child: Align(
+                        alignment: Alignment.centerRight,
+                        child: Text(
+                          ApplicationText.applicationForgotPasswordText,
+                          style: TextStyle(
+                              fontSize: 13.sp, fontWeight: FontWeight.w800),
+                        )),
+                  ),
                   30.ph,
                   ApplicationButton(
                     onPressed: () {},

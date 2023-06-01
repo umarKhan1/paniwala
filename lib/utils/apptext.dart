@@ -15,6 +15,15 @@ class ApplicationText {
   static const String applicationForgotPasswordText = "Forgot Password ?";
    static const String applicationConfirmPasswordText = "Enter Your Confirm Password";
  static const String applicationdonthaveaccount = "Don't Have an account?";
+  static const String applicationemailaccount = "Enter the Phone number associated with your account";
 
+ static const String applicationOtpVerfication = "OTP Verification";
+ 
+ static const String applicationEnterOtp = "Enter the OTP sent to ";
+ static const String applicationdidntrecieved = "Didn't you receive the OTP?";
+  static const String applicationresend = "Resend";
+  static const String applicationverfiy = "Verify";
+    static const String applicationSend = "Send";
+   
  static const String applicationsignup = "Sign up";
 }

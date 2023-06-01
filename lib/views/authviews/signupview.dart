@@ -1,7 +1,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:paniwala/appwidgets/appnavigation.dart';
 import 'package:paniwala/utils/paddingext.dart';
+import 'package:paniwala/views/authviews/otp_verify.dart';
 
 import '../../appwidgets/appbutton.dart';
 import '../../appwidgets/apptextformfield.dart';
@@ -57,7 +59,9 @@ class SignupView extends StatelessWidget {
                       isPass: true, textInputType: TextInputType.emailAddress),
                   30.ph,
                   ApplicationButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      AppNavigation.navigateTo(context,const  OtpVerfication());
+                    },
                     inputText: "Signup",
                   ),
         
